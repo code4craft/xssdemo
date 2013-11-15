@@ -155,37 +155,10 @@ pre code {
 	}
 }
 </style>
-<title>1.获取图片：</title>
 
 </head>
 <body>
-<h2>图片验证码</h2>
+<div><a href='/demo?id=<script>alert("xss!")</script>'>test xss</a></div>
 
-<p>验证码分为两个部分：</p>
-
-<h3>1.获取图片：</h3>
-
-<p>url:<a href="/image?token=xxx">/image?token=xxx</a>
-token为空返回json {"code":403}</p>
-
-<h3>2.验证答案：</h3>
-
-<p>url:<a href="/validate?answer=10&token=xxx">/validate?answer=10&token=xxx</a>
-token为空返回json {"code":403}</p>
-<p>成功返回200，失败返回400</p>
-<h3>3.图像算法</h3>
-<p>是com.dianping.imcaptcha.strategy.WaveFilter和com.dianping.imcaptcha.strategy.ReverseWaveFilter，参数还没统一</p>
-<p>依赖这个包</p>
- <p>&lt;dependency&gt;</p>
-			 <p>&lt;groupId&gt;com.jhlabs&lt;/groupId&gt;</p>
-			 <p>&lt;artifactId&gt;filters&lt;/artifactId&gt;</p>
-			 <p>&lt;version&gt;2.0.235&lt;/version&gt;</p>
-			 <p>&lt;type&gt;jar&lt;/type&gt;</p>
-			 <p>&lt;scope&gt;compile&lt;/scope&gt;</p>
-		 <p>&lt;/dependency&gt;</p>
-
-<h3>4.demo：</h3>
-
-<p>url:<a href="/demo">/demo</a>
 </body>
 </html>
