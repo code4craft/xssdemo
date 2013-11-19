@@ -13,6 +13,7 @@
        <constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
         <package name="imcaptcha" namespace="/" extends="json-default">
             <interceptors>
+                <interceptor name="escapedconversionError" class="com.dianping.imcaptcha.action.EscapedStrutsConversionErrorInterceptor"></interceptor>
                 <interceptor-stack name="defaultStack">
                     <interceptor-ref name="exception"/>
                     <interceptor-ref name="alias"/>
@@ -28,10 +29,9 @@
                     <interceptor-ref name="staticParams"/>
                     <interceptor-ref name="actionMappingParams"/>
                     <interceptor-ref name="params">
-                        <param name="excludeParams">
-                            dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*
-                        </param>
+                        <param name="excludeParams">dojo\..*,^struts\..*,^session\..*,^request\..*,^application\..*,^servlet(Request|Response)\..*,parameters\...*</param>
                     </interceptor-ref>
+                    <interceptor-ref name="escapedconversionError"/>
                     <interceptor-ref name="validation">
                         <param name="excludeMethods">input,back,cancel,browse</param>
                     </interceptor-ref>
